@@ -8,7 +8,8 @@ import logging
 import numpy as np
 from sklearn.metrics import jaccard_similarity_score
 
-from .context import chimera, datapath
+from tests.context import chimera, datapath
+#from .context import chimera, datapath
 
 COMMUNITIES = 5
 LATENT_FACTORS = 7
@@ -76,3 +77,8 @@ def test_e2e():
     logging.info('Final score: %g', jaccard_similarity_score(y.reshape((-1,)), yhat.reshape(-1,)))
 
     chimera.save_array('labels.txt', yhat)
+
+
+test_load_matrix()
+test_load_array()
+test_e2e()
